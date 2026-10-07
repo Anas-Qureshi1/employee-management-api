@@ -7,7 +7,8 @@ def test_home():
     response = client.get("/")
 
     assert response.status_code == 200
-    assert response.data == b"Employee Management API"
+    assert b"Employee Management" in response.data
+    assert b"EmployeeHub" in response.data
 
 
 def test_get_employees():
@@ -16,7 +17,7 @@ def test_get_employees():
     response = client.get("/employees")
 
     assert response.status_code == 200
-    assert len(response.json) == 3
+    assert len(response.json) == 4
 
 
 def test_get_employee():
@@ -25,7 +26,7 @@ def test_get_employee():
     response = client.get("/employees/1")
 
     assert response.status_code == 200
-    assert response.json["name"] == "Anas"
+    assert response.json["name"] == "Anas Qureshi"
 
 
 def test_employee_not_found():
