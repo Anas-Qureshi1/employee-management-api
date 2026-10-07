@@ -6,7 +6,7 @@ pipeline {
 
         DOCKER_HOST = 'npipe:////./pipe/dockerDesktopLinuxEngine'
 
-        DOCKERHUB_USERNAME = 'anasqdev
+        DOCKERHUB_USERNAME = 'anasqdev'
 
 '
 
